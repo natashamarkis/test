@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Тестовое задание для компании 'Северсталь'
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Было получено следующее тз:
 
-## Available Scripts
+Реализовать приложение, которое со следующими страницами:
 
-In the project directory, you can run:
+            / — главная
 
-### `npm start`
+            /login — страница ввода логина и пароля
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+            /news — страница с новостями (любая информация, желательно новости хранить в json формате)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+            /profile — страница с произвольным текстом, недоступная без авторизации
 
-### `npm test`
+На сайте, в шапке или подвале реализовать ссылки:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+            На главную (/)
 
-### `npm run build`
+            Новости (/news)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+            Профиль (/profile)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Если пользователь кликает на страницу “профиля” и он не “авторизован” — перекидывать на страницу /login
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Форма входа (/login) принимает “фейковые” данные:
 
-### `npm run eject`
+username: Admin
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+password: 12345
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Если введены другие данные, то показывается сообщения:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Имя пользователя или пароль введены не верно
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Если введены корректные данные, то перебрасывать на страницу /profile
 
-## Learn More
+Информацию об авторизации пользователя можно хранить в localStorage, простым параметром true/false. Базу данных реализовать не нужно.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Все необходимое на ваш взгляд, прокинуть через Redux.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Оформление (дизайн) — не важно. Сделайте, чтобы можно было комфортно смотреть пример в браузере.
