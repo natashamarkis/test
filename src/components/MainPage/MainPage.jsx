@@ -66,7 +66,7 @@ function MainPage() {
                                 <img className={classes.itemImg} src={`/img/carousel/${el}`} alt="text" />
                             </div>
                         )) : (
-                            <div>No Data</div>
+                            <div>Нет данных</div>
                         )}
                     </Slider>
                 </div>

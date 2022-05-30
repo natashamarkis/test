@@ -44,13 +44,17 @@ function Login() {
         }
     }
 
+    const handleForm = (e) => {
+        e.stopPropagation()
+    }
+
     return (
         <div>
             <div
             >
                 <Container
                     maxWidth="sm"
-                    onClick={(event) => event.stopPropagation()}
+                    onClick={handleForm}
                 >
                     <Typography variant="h2" gutterBottom component="h2" sx={{my: 7, mx: "auto", textAlign: "center"}}>
                         Вход

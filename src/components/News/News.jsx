@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import NewsCard from "../NewsCard/NewsCard";
 import {Container, Typography} from "@mui/material";
 import {makeStyles} from "@mui/styles";
+import {newsLink} from "../../common/const"
 
 const useStyles = makeStyles(() => ({
     wrapper: {
@@ -19,9 +20,7 @@ function News() {
 
     useEffect(() => {
     const fetchData = async () => {
-        const newsData = await fetch(
-            'https://newsapi.org/v2/everything?q=apple&from=2022-05-28&to=2022-05-28&sortBy=popularity&apiKey=399e5248fc374247a07e034081b4130a'
-        )
+        const newsData = await fetch(newsLink)
         const newsItems = await newsData.json()
         setData(newsItems.articles)
     };

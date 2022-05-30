@@ -1,8 +1,7 @@
 //Instruments
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import React from "react";
 
 //Components
 import Header from "../Header/Header";
@@ -11,6 +10,9 @@ import MainPage from "../MainPage/MainPage";
 import News from "../News/News";
 import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
+
+//Data
+import {user} from "../../common/const"
 
 const theme = createTheme({
   palette: {
@@ -26,14 +28,10 @@ const theme = createTheme({
 function App() {
     useEffect(() => {
         localStorage.setItem('isLogin', JSON.stringify(false))
-        localStorage.setItem('user', JSON.stringify({
-            username: "Admin",
-            password: "12345",
-        } ))
+        localStorage.setItem('user', JSON.stringify(user))
     }, [])
 
   return (
-
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <Header />
@@ -46,7 +44,6 @@ function App() {
                 <Footer />
             </BrowserRouter>
         </ThemeProvider>
-
   );
 }
 
