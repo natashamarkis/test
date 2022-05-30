@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Alert, AlertTitle, Button, Container, FormControl, TextField, Typography} from "@mui/material";
+import {Alert, AlertTitle, Button, Container, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {makeStyles} from "@mui/styles";
 
@@ -12,8 +12,6 @@ const useStyles = makeStyles(() => ({
         alignItems: "center",
         width: "100%",
         marginBottom: "40px"
-
-
     },
     formItem: {
         width: "50%",
@@ -22,12 +20,9 @@ const useStyles = makeStyles(() => ({
         fontSize: "20px",
         borderRadius: "4px",
     },
-
 }))
 
-
-function Login(props) {
-
+function Login() {
     const classes = useStyles()
     const navigate = useNavigate()
     const username = useRef()
@@ -35,21 +30,18 @@ function Login(props) {
 
     const [toggle, setToggle] = useState(false)
 
-
     const handleLogin = (e) => {
         e.preventDefault()
         const mockedUser = JSON.parse(localStorage.getItem('user'))
-        if(username.current.value === mockedUser.username && password.current.value === mockedUser.password){
+        if(username?.current.value === mockedUser.username && password?.current.value === mockedUser.password){
             localStorage.isLogin = true
             navigate('/profile')
-
         } else {
             setToggle(true)
             setTimeout(() => {
                 setToggle(false)
             }, 3000)
         }
-
     }
 
     return (
@@ -68,17 +60,11 @@ function Login(props) {
                         <input type="password" placeholder="password" className={classes.formItem} ref={password}/>
                         <div>
                             <Button sx={{width: "150px"}} variant="contained" type="submit" onClick={handleLogin}>Войти</Button>
-
                         </div>
-
                     </form>
-
                     {toggle && <Alert severity="error">Имя пользователя или пароль введены не верно</Alert>}
-
                 </Container>
             </div>
-
-
         </div>
     );
 }

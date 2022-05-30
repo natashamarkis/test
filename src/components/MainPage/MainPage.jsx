@@ -1,10 +1,9 @@
 import React from 'react';
-import Slider from "react-slick";
+import {Container} from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {Container} from "@mui/material";
 
 const useStyles = makeStyles(() => ({
     wrapper: {
@@ -14,7 +13,6 @@ const useStyles = makeStyles(() => ({
         boxSizing: "border-box",
         padding: "40px",
         backgroundColor: "white"
-
     },
     item: {
         height: "42vw",
@@ -42,7 +40,7 @@ const useStyles = makeStyles(() => ({
 
 const images = ['severstal1.png', 'severstal2.png', 'severstal3.png']
 
-function MainPage(props) {
+function MainPage() {
     const classes = useStyles();
 
     const settings = {
@@ -57,21 +55,19 @@ function MainPage(props) {
         cssEase: "linear",
         pauseOnHover: false
     };
+
     return (
         <div id="gallery" className={classes.galleryWrapper}>
             <Container maxWidth="lg">
                 <div className={classes.wrapper} >
                     <Slider {...settings}>
-
                         {images.length > 0 ? images.map(el => (
                             <div className={classes.item}>
                                 <img className={classes.itemImg} src={`/img/carousel/${el}`} alt="text" />
                             </div>
                         )) : (
-                            <div> No Data</div>
+                            <div>No Data</div>
                         )}
-
-
                     </Slider>
                 </div>
             </Container>

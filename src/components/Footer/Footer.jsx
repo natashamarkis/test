@@ -1,14 +1,9 @@
 import React from 'react';
-import {Box, Container, Grid, Link} from '@mui/material';
-import {makeStyles} from "@mui/styles";
+import {Box, Container} from '@mui/material';
 
-const useStyles = makeStyles(() => ({
 
-}))
+function Footer() {
 
-function Footer(props) {
-
-    const classes = useStyles()
     return (
         <footer >
             <Box

@@ -11,15 +11,11 @@ const useStyles = makeStyles(() => ({
         display: "block",
         paddingTop: "20px",
         textAlign: "end",
-
-
-
     }
 }))
 
 function NewsCard({data}) {
-
-const classes = useStyles()
+    const classes = useStyles()
 
     return (
         <Paper elevation={10}
@@ -31,19 +27,17 @@ const classes = useStyles()
                 variant="h5"
                 sx={{marginBottom: "10px", fontWeight: "bold"}}
             >
-                {data.title}
+                {data?.title}
             </Typography>
             <Typography>
-                {data.description}
+                {data?.description}
             </Typography>
             <Typography
                 className={classes.newsAuthor}
                 sx={{fontStyle: "italic"}}
             >
-               {data.author}
+               {data?.author}
             </Typography>
-
-
         </Paper>
     );
 }

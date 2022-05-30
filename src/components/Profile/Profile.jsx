@@ -1,9 +1,8 @@
 import React from 'react';
 import {Container, Typography} from "@mui/material";
 
-function Profile(props) {
-
-const user = JSON.parse(localStorage.getItem("user"))
+function Profile() {
+    const user = JSON.parse(localStorage.getItem("user"))
 
     return (
         <Container>
@@ -12,7 +11,7 @@ const user = JSON.parse(localStorage.getItem("user"))
                 variant="h2"
                 sx={{textAlign: "center", marginBottom: "30px", marginTop: "30px"}}
             >
-            Hello, {user.username}
+            Hello, {user?.username}
             </Typography>
         </Container>
     );

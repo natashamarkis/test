@@ -1,8 +1,6 @@
 //Instruments
-import './App.module.css';
 import {createTheme, ThemeProvider} from "@mui/material";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
 
 //Components
 import Header from "../Header/Header";
@@ -12,7 +10,6 @@ import News from "../News/News";
 import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import {useEffect} from "react";
-
 
 const theme = createTheme({
   palette: {
@@ -26,7 +23,6 @@ const theme = createTheme({
 })
 
 function App() {
-
     useEffect(() => {
         localStorage.setItem('isLogin', JSON.stringify(false))
         localStorage.setItem('user', JSON.stringify({
@@ -35,25 +31,21 @@ function App() {
         } ))
     }, [])
 
-
   return (
-<>
-
-    <ThemeProvider theme={theme}>
-        <BrowserRouter>
-            <Header />
-            <Routes>
-                <Route path='/' element={<MainPage />} />
-                <Route path='/news' element={<News />}/>
-                <Route path='/profile' element={<Profile />}/>
-                <Route path='/login' element={<Login />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-    </ThemeProvider>
-
-</>
-
+    <>
+        <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path='/' element={<MainPage />} />
+                    <Route path='/news' element={<News />}/>
+                    <Route path='/profile' element={<Profile />}/>
+                    <Route path='/login' element={<Login />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </ThemeProvider>
+    </>
   );
 }
 

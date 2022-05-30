@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {AppBar, Toolbar, Button, Container, Link, Typography} from "@mui/material";
+import React from 'react';
+import {AppBar, Toolbar, Button, Container} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {makeStyles} from "@mui/styles";
 
@@ -10,39 +10,29 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-function Header(props) {
-
+function Header() {
     const classes = useStyles()
 
     const navigate = useNavigate()
-    const handleMain = (e) => {
-        e.preventDefault()
+    const handleMain = () => {
         navigate('/')
     }
 
-
-    const handleNews = (e) => {
-        e.preventDefault()
+    const handleNews = () => {
         navigate('/news')
     }
 
-
-    const handleProfile = (e) => {
-        e.preventDefault()
+    const handleProfile = () => {
         if(JSON.parse(localStorage.getItem('isLogin'))){
             navigate('/profile')
         } else {
             navigate('/login')
         }
-
-
     }
 
     return (
-
             <AppBar style={{zIndex: '100',
                 position: 'sticky', backgroundColor: "rgb(1,46,108)"}}>
-
                 <Container maxWidth='lg'>
                     <Toolbar disableGutters className={classes.headerItems}>
                         <Button color="inherit" onClick={handleMain}>На главную</Button>
@@ -50,9 +40,7 @@ function Header(props) {
                         <Button color="inherit" onClick={handleProfile}>Профиль</Button>
                     </Toolbar>
                 </Container>
-
             </AppBar>
-
     );
 }
 

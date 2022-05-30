@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import NewsCard from "../NewsCard/NewsCard";
 import {Container, Typography} from "@mui/material";
-// import data from '../../mockedData/newsData.json'
 import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
@@ -13,7 +12,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-function News(props) {
+function News() {
     const classes = useStyles()
 
     const [data, setData] = useState()
@@ -29,7 +28,6 @@ function News(props) {
     fetchData()
     }, [])
 
-
     return (
         <div>
             <Typography
@@ -40,7 +38,7 @@ function News(props) {
                 Новости
             </Typography>
             <Container className={classes.wrapper}>
-                {data ? data.map(data => <NewsCard key={data.publishedAt} data={data} />) : <div>Загрузка...</div>}
+                {data ? data.map(data => <NewsCard key={data?.publishedAt} data={data} />) : <div>Загрузка...</div>}
             </Container>
         </div>
     );
