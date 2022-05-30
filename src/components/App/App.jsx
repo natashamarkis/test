@@ -1,6 +1,8 @@
 //Instruments
-import {createTheme, ThemeProvider} from "@mui/material";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {useEffect} from "react";
+import {createTheme, ThemeProvider} from "@mui/material";
+import React from "react";
 
 //Components
 import Header from "../Header/Header";
@@ -9,7 +11,6 @@ import MainPage from "../MainPage/MainPage";
 import News from "../News/News";
 import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
-import {useEffect} from "react";
 
 const theme = createTheme({
   palette: {
@@ -32,7 +33,7 @@ function App() {
     }, [])
 
   return (
-    <>
+
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <Header />
@@ -45,7 +46,7 @@ function App() {
                 <Footer />
             </BrowserRouter>
         </ThemeProvider>
-    </>
+
   );
 }
 

@@ -62,7 +62,7 @@ function MainPage() {
                 <div className={classes.wrapper} >
                     <Slider {...settings}>
                         {images.length > 0 ? images.map(el => (
-                            <div className={classes.item}>
+                            <div key={`${el}`} className={classes.item}>
                                 <img className={classes.itemImg} src={`/img/carousel/${el}`} alt="text" />
                             </div>
                         )) : (

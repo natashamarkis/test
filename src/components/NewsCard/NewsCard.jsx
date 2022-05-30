@@ -27,16 +27,16 @@ function NewsCard({data}) {
                 variant="h5"
                 sx={{marginBottom: "10px", fontWeight: "bold"}}
             >
-                {data?.title}
+                {data.title}
             </Typography>
             <Typography>
-                {data?.description}
+                {data.description}
             </Typography>
             <Typography
                 className={classes.newsAuthor}
                 sx={{fontStyle: "italic"}}
             >
-               {data?.author}
+               {data.author}
             </Typography>
         </Paper>
     );
